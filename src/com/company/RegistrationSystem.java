@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.Model.Course;
+import com.company.Model.Person;
 import com.company.Model.Student;
 import com.company.Repository.CourseRepository;
 import com.company.Repository.StudentRepository;
@@ -50,7 +51,11 @@ public class RegistrationSystem {
     }
 
     public List<Student> retrieveStudentsEnrolledForACourse(Course curs){
-        return curs.getEnrolledstudents();
+        for (Course index : course.getAll())
+            if (index == curs){
+                return index.getEnrolledstudents();
+            }
+        return new ArrayList<>();
     }
 
     public List<Course> retrieveCoursesWithFreePlaces(){
@@ -62,5 +67,15 @@ public class RegistrationSystem {
         return freeCourses;
     }
 
+    public boolean deleteCourse(Person teacher, Course courseToDelete){
+        if (courseToDelete.getTeacher() == teacher) {
+            for (Student student :  courseToDelete.getEnrolledstudents()){
+                student.removeCourse(courseToDelete);
+            }
+            course.delete(courseToDelete);
+            return true;
+        }
+        return false;
+    }
 
 }

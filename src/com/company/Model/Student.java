@@ -31,6 +31,11 @@ public class Student extends Person {
         this.credits += c.getCredits();
     }
 
+    public void removeCourse(Course c){
+        this.enrolledcourse.remove(c);
+        this.credits -= c.getCredits();
+    }
+
     @Override
     public String toString() {
         return "Student{" +

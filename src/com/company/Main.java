@@ -14,7 +14,7 @@ public class Main {
 
         //cursurile
         Person pers1 = new Person("Benta", "Iulian");
-        Course obja = new Course("fp", pers1, 2, 6);
+        Course obja = new Course("fp", pers1, 6, 6);
         Course objb = new Course("map", pers1, 8, 6);
 
         RegistrationSystem registru = new RegistrationSystem();
@@ -29,6 +29,11 @@ public class Main {
 
         System.out.println(registru.retrieveStudentsEnrolledForACourse(obja));
         System.out.println(registru.retrieveCoursesWithFreePlaces());
+        System.out.println(obj1.getCredits());
+
+        System.out.println();
+        registru.deleteCourse(pers1, obja);
+        System.out.println(registru.retrieveStudentsEnrolledForACourse(obja));
         System.out.println(obj1.getCredits());
     }
 }

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
-    private final String name;
-    private final Person teacher;
+    private String name;
+    private Person teacher;
     private int maxenrolled;
-    private final List<Student> enrolledstudents;
+    private List<Student> enrolledstudents;
     private int credits;
 
     public Course(String name, Person teacher, int max, int credits){
@@ -23,7 +23,7 @@ public class Course {
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     public int getCredits() {
@@ -40,6 +40,10 @@ public class Course {
 
     public void setMaxenrolled(int maxenrolled) {
         this.maxenrolled = maxenrolled;
+    }
+
+    public Person getTeacher() {
+        return teacher;
     }
 
     public List<Student> getEnrolledstudents() {
