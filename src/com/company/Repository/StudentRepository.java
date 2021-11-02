@@ -29,5 +29,9 @@ public class StudentRepository extends InMemoryRepository<Student> {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
 

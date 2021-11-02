@@ -31,4 +31,10 @@ public abstract class InMemoryRepository<T> implements ICrudRepository<T> {
         this.repoList.remove(obj);
     }
 
+    @Override
+    public String toString() {
+        return "InMemoryRepository{" +
+                "repoList=" + repoList +
+                '}';
+    }
 }

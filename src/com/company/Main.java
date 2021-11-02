@@ -25,15 +25,22 @@ public class Main {
 
         registru.register(obja, obj1);
         registru.register(obja, obj2);
-        registru.register(objb, obj1);
+        registru.register(objb, obj2);
 
         System.out.println(registru.retrieveStudentsEnrolledForACourse(obja));
         System.out.println(registru.retrieveCoursesWithFreePlaces());
         System.out.println(obj1.getCredits());
-
+        System.out.println(obj2.getCredits());
+        /*
         System.out.println();
         registru.deleteCourse(pers1, obja);
         System.out.println(registru.retrieveStudentsEnrolledForACourse(obja));
         System.out.println(obj1.getCredits());
+        */
+
+
+        System.out.println(registru.getAllCourse());
+        registru.switchcredit(25, obja);
+        System.out.println(obj2.getCredits());
     }
 }
